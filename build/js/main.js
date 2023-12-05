@@ -6,7 +6,7 @@ let album;
 myName = "Muhammed";
 meaningOfLife = 11;
 isLoading = false;
-album = 2001;
+album = 2023;
 const sum = (a, b) => {
     return a + b;
 };

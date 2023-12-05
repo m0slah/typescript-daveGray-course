@@ -1,17 +1,22 @@
-let username = "mo";
+let myName: string;
+let meaningOfLife: number;
+let isLoading: boolean;
+let album: string | number;
 
-console.log(username);
+myName = "Muhammed";
+meaningOfLife = 11;
+isLoading = false;
+album = 2001;
 
-let a: number;
-let b: string;
-let c: number;
+const sum = (a: number, b: number): number => {
+  return a + b;
+};
 
-a = 2;
-b = "3";
-c = 1;
+const resultSumation = sum(1, 31);
 
-let r = a / b;
-let r2 = c * b;
+console.log(resultSumation);
 
-console.log(r);
-console.log(r2);
+let postId: string | number;
+let isActive: boolean | number;
+
+let re: RegExp = /\w+/g;

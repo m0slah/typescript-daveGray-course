@@ -1,75 +1,78 @@
-let stringArr = ['one', 'hey', 'Dave']
+let stringArr = ["one", "two", "three"];
 
-let guitars = ['Strat', 'Les Paul', 5150]
+let playerName = ["palmer", "chelsea", 19];
 
-let mixedData = ['EVH', 1984, true]
+let mixedData = ["test", 12, true];
 
-stringArr[0] = 'John'
-stringArr.push('hey')
+// stringArr[0] = 12; //Type 'number' is not assignable to type 'string'
+stringArr[0] = "anotherNumber";
 
-guitars[0] = 1984
-guitars.unshift('Jim')
+playerName[2] = 10;
+playerName[0] = "mudrik";
+playerName.unshift("test");
 
-let test = []
-let bands: string[] = []
-bands.push('Van Halen')
+mixedData.push("hello");
+mixedData.push(12);
+mixedData.push(false);
 
-// Tuple 
-let myTuple: [string, number, boolean] = ['Dave', 42, true]
+let test = [];
+let bands: string[] = [];
 
-let mixed = ['John', 1, false]
+bands.push("one");
+// bands.push(12); //Argument of type 'number' is not assignable to parameter of type 'string'.
+// bands.push(true); //Argument of type 'boolean' is not assignable to parameter of type 'string'.
 
-myTuple[1] = 42
+let myTuple: [string, number, boolean];
+myTuple = ["mo", 11, true];
+mixedData = ["test", 1, false];
 
-// Objects
-let myObj: object
-myObj = []
-console.log(typeof myObj)
-myObj = bands
-myObj = {}
+mixedData = myTuple;
+// myTuple = mixedData; // Target requires 3 element(s) but source may have fewer.
 
-const exampleObj = {
-    prop1: 'Dave',
-    prop2: true,
-}
+myTuple[0] = "testing";
+// myTuple[0] = 1; //Type 'number' is not assignable to type 'string'.
 
-exampleObj.prop1 = 'John'
+//Objects
+let myObj: object;
+myObj = [];
+
+console.log(typeof myObj);
+myObj = bands;
+myObj = {};
+
+const exampleObject = {
+  name: "John Doe",
+  age: 34,
+};
+
+exampleObject.name = "another name";
 
 interface Guitarist {
-    name?: string,
-    active: boolean,
-    albums: (string | number)[]
+  name: string;
+  active?: boolean;
+  albums: (string | number)[];
 }
 
 let evh: Guitarist = {
-    name: 'Eddie',
-    active: false,
-    albums: [1984, 5150, 'OU812']
-}
-
-let jp: Guitarist = {
-    active: true,
-    albums: ['I', 'II', 'IV']
-}
+  name: "muhammed",
+  active: false,
+  albums: ["goal", 1],
+};
 
 const greetGuitarist = (guitarist: Guitarist) => {
-    if (guitarist.name) {
-        return `Hello ${guitarist.name.toUpperCase()}!`
-    }
-    return 'Hello!'
-}
+  if (guitarist.name) {
+    return `hello ${guitarist.name.toUpperCase()}!`;
+  }
+};
 
-console.log(greetGuitarist(jp))
-
-// Enums 
-// "Unlike most TypeScript features, Enums are not a type-level addition to JavaScript but something added to the language and runtime."
+console.log(greetGuitarist(evh));
 
 enum Grade {
-    U = 1,
-    D,
-    C,
-    B,
-    A,
+  U = 1,
+  D,
+  C,
+  B,
+  A,
 }
 
-console.log(Grade.U)
+console.log(Grade.U);

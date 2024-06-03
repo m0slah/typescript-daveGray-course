@@ -1,55 +1,75 @@
 "use strict";
-let stringArr = ["one", "two", "three"];
-let playerName = ["palmer", "chelsea", 19];
-let mixedData = ["test", 12, true];
-// stringArr[0] = 12; //Type 'number' is not assignable to type 'string'
-stringArr[0] = "anotherNumber";
-playerName[2] = 10;
-playerName[0] = "mudrik";
-playerName.unshift("test");
-mixedData.push("hello");
-mixedData.push(12);
-mixedData.push(false);
-let test = [];
-let bands = [];
-bands.push("one");
-// bands.push(12); //Argument of type 'number' is not assignable to parameter of type 'string'.
-// bands.push(true); //Argument of type 'boolean' is not assignable to parameter of type 'string'.
-let myTuple;
-myTuple = ["mo", 11, true];
-mixedData = ["test", 1, false];
-mixedData = myTuple;
-// myTuple = mixedData; // Target requires 3 element(s) but source may have fewer.
-myTuple[0] = "testing";
-// myTuple[0] = 1; //Type 'number' is not assignable to type 'string'.
-//Objects
-let myObj;
-myObj = [];
-console.log(typeof myObj);
-myObj = bands;
-myObj = {};
-const exampleObject = {
-    name: "John Doe",
-    age: 34,
+// Literal types
+let myName;
+let username;
+username = "Dave";
+const sum = (a, b) => {
+    return a + b;
 };
-exampleObject.name = "another name";
-let evh = {
-    name: "muhammed",
-    active: false,
-    albums: ["goal", 1],
+const resultOfSum = sum(6, 8);
+console.log(resultOfSum);
+const message = (message) => {
+    return message;
 };
-const greetGuitarist = (guitarist) => {
-    if (guitarist.name) {
-        return `hello ${guitarist.name.toUpperCase()}!`;
+const showMessage = message(sum(2, 3));
+// const showMessage1=message(sum('a',3)); //Argument of type is not assignable to parameter of typ number
+console.log(showMessage);
+// console.log(showMessage1);
+let subtract = function (firstNumber, secondNumber) {
+    return firstNumber - secondNumber;
+};
+console.log(subtract(8, 2));
+// interface mathFunction {
+//     (a: number,
+//      b: number): number
+// }
+let multiply = function (a, b) {
+    return a * b;
+};
+const showMultiplyResult = multiply(2, 10);
+console.log("showMultiplyResult: " + showMultiplyResult);
+// optional parameter
+const addAll = (firstNumber, secondNumber, thirdNumber) => {
+    if (typeof thirdNumber !== "undefined") {
+        return firstNumber + secondNumber + thirdNumber;
+    }
+    return firstNumber + secondNumber;
+};
+// default parameter value
+const sumAll = (firstNumber, secondNumber, thirdNumber = 2) => {
+    return firstNumber + secondNumber + thirdNumber;
+};
+console.log(addAll(1, 100)); //101
+console.log(addAll(1, 100, 3)); //104
+console.log(addAll(1, 100)); //101
+const total = (a, ...nums) => {
+    return nums.reduce((prev, curr) => prev + curr);
+};
+console.log(total(1, 2, 3, 4, 5, 6));
+const createError = (errorMessage) => {
+    throw new Error(errorMessage);
+};
+const infinite = () => {
+    let i = 1;
+    while (true) {
+        i++;
+        if (i > 100)
+            break;
     }
 };
-console.log(greetGuitarist(evh));
-var Grade;
-(function (Grade) {
-    Grade[Grade["U"] = 1] = "U";
-    Grade[Grade["D"] = 2] = "D";
-    Grade[Grade["C"] = 3] = "C";
-    Grade[Grade["B"] = 4] = "B";
-    Grade[Grade["A"] = 5] = "A";
-})(Grade || (Grade = {}));
-console.log(Grade.U);
+const isNumber = (value) => {
+    return typeof value === "number" ? true : false;
+};
+const isString = (value) => {
+    return typeof value === 'string' ? true : false;
+};
+const numberOrString = (data) => {
+    if (isString(data)) {
+        return "string";
+    }
+    else if (isNumber(data))
+        return "number";
+    return createError("this should never happined");
+};
+const r = numberOrString("1");
+console.log(r);

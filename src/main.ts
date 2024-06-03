@@ -1,78 +1,117 @@
-let stringArr = ["one", "two", "three"];
+// type aliases
+type stringOrNumber = string | number;
 
-let playerName = ["palmer", "chelsea", 19];
+type stringOrNumberArray = (string | number)[];
 
-let mixedData = ["test", 12, true];
-
-// stringArr[0] = 12; //Type 'number' is not assignable to type 'string'
-stringArr[0] = "anotherNumber";
-
-playerName[2] = 10;
-playerName[0] = "mudrik";
-playerName.unshift("test");
-
-mixedData.push("hello");
-mixedData.push(12);
-mixedData.push(false);
-
-let test = [];
-let bands: string[] = [];
-
-bands.push("one");
-// bands.push(12); //Argument of type 'number' is not assignable to parameter of type 'string'.
-// bands.push(true); //Argument of type 'boolean' is not assignable to parameter of type 'string'.
-
-let myTuple: [string, number, boolean];
-myTuple = ["mo", 11, true];
-mixedData = ["test", 1, false];
-
-mixedData = myTuple;
-// myTuple = mixedData; // Target requires 3 element(s) but source may have fewer.
-
-myTuple[0] = "testing";
-// myTuple[0] = 1; //Type 'number' is not assignable to type 'string'.
-
-//Objects
-let myObj: object;
-myObj = [];
-
-console.log(typeof myObj);
-myObj = bands;
-myObj = {};
-
-const exampleObject = {
-  name: "John Doe",
-  age: 34,
-};
-
-exampleObject.name = "another name";
-
-interface Guitarist {
-  name: string;
-  active?: boolean;
-  albums: (string | number)[];
+type Guitarist = {
+    name: string;
+    active?: boolean;
+    albums: stringOrNumberArray;
 }
 
-let evh: Guitarist = {
-  name: "muhammed",
-  active: false,
-  albums: ["goal", 1],
-};
+type userId = stringOrNumber;
 
-const greetGuitarist = (guitarist: Guitarist) => {
-  if (guitarist.name) {
-    return `hello ${guitarist.name.toUpperCase()}!`;
-  }
-};
+// Literal types
+let myName: "dave";
 
-console.log(greetGuitarist(evh));
+let username: "Dave" | "John" | "Amy";
 
-enum Grade {
-  U = 1,
-  D,
-  C,
-  B,
-  A,
+username = "Dave";
+
+const sum = (a: number, b: number) => {
+    return a + b;
 }
 
-console.log(Grade.U);
+const resultOfSum = sum(6, 8);
+
+console.log(resultOfSum)
+
+const message = (message: any) => {
+    return message;
+}
+
+const showMessage = message(sum(2, 3));
+// const showMessage1=message(sum('a',3)); //Argument of type is not assignable to parameter of typ number
+
+console.log(showMessage);
+// console.log(showMessage1);
+
+let subtract = function (firstNumber: number, secondNumber: number): number {
+    return firstNumber - secondNumber;
+}
+
+console.log(subtract(8, 2));
+
+type mathFunction = (a: number, b: number) => number;
+// interface mathFunction {
+//     (a: number,
+//      b: number): number
+// }
+
+let multiply: mathFunction = function (a, b) {
+    return a * b;
+}
+
+const showMultiplyResult = multiply(2, 10);
+
+console.log("showMultiplyResult: " + showMultiplyResult);
+
+// optional parameter
+const addAll = (firstNumber: number, secondNumber: number, thirdNumber?: number): number => {
+    if (typeof thirdNumber !== "undefined") {
+        return firstNumber + secondNumber + thirdNumber;
+    }
+    return firstNumber + secondNumber;
+}
+
+// default parameter value
+const sumAll = (firstNumber: number, secondNumber: number, thirdNumber = 2): number => {
+
+    return firstNumber + secondNumber + thirdNumber;
+}
+
+console.log(addAll(1, 100)); //101
+console.log(addAll(1, 100, 3)); //104
+console.log(addAll(1, 100)); //101
+
+const total = (a: number, ...nums: number[]): number => {
+    return nums.reduce((prev, curr) =>
+        prev + curr
+    )
+}
+
+console.log(total(1, 2, 3, 4, 5, 6));
+
+const createError = (errorMessage: string): never => {
+    throw new Error(errorMessage)
+}
+
+const infinite = () => {
+    let i: number = 1;
+
+    while (true) {
+        i++;
+
+        if (i > 100)
+            break;
+    }
+}
+
+const isNumber=(value:any):boolean=>{
+    return typeof value === "number" ? true : false
+}
+
+const isString=(value:any):boolean=>{
+    return typeof value === 'string' ? true : false
+}
+
+const numberOrString = (data: number | string): string => {
+    if (isString(data)) {
+        return "string"
+    } else if (isNumber(data))
+        return "number"
+    return createError("this should never happined")
+}
+
+const r = numberOrString("1");
+console.log(r)

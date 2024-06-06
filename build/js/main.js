@@ -31,4 +31,16 @@ class webDev extends Coder {
 }
 const dev1 = new webDev("lenovo", "hama", "dimonds", 23, "javascript");
 console.log(dev1.getLanguague());
-console.log();
+class Player {
+    constructor(name, playerNumber) {
+        this.name = name;
+        this.name = name;
+        this.playerNumber = playerNumber;
+    }
+    transfer(from, to) {
+        return `the player transfer form ${from} to ${to}`;
+    }
+}
+const player = new Player("palmer", 20);
+console.log(player);
+console.log(player.transfer("man city", "chelsea"));

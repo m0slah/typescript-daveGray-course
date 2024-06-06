@@ -24,6 +24,27 @@ console.log(student1.getAge());
 console.log(student1.music);
 console.log(student1.getAge());
 
-
-
 console.log(student1);
+
+class webDev extends Coder {
+  constructor(
+    public computer: string,
+    name: string,
+    music: string,
+    age: number,
+    language: string
+  ) {
+    super(name, music, age, language);
+    this.computer = computer;
+  }
+
+  getLanguague = () => {
+    return this.language;
+  };
+}
+
+const dev1: webDev = new webDev("lenovo", "hama", "dimonds", 23, "javascript");
+
+console.log(dev1.getLanguague());
+console.log(dev1.age);
+

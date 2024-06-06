@@ -1,78 +1,36 @@
-let stringArr = ["one", "two", "three"];
+type One = string;
+type Two = string | number;
+type Three = "hello";
 
-let playerName = ["palmer", "chelsea", 19];
+//convert to more or less specific
+let a: One = 'hello';
+let b = a as Two; // less specific
+let c=a as Three; //more specific
 
-let mixedData = ["test", 12, true];
+let d=<One>('world')
+let e=<string | number>('world');
 
-// stringArr[0] = 12; //Type 'number' is not assignable to type 'string'
-stringArr[0] = "anotherNumber";
+const addOrConcat=(a:number,b:number,c:'add'|'concat'):number|string=>{
+        if ( c==='add') return a+b;
 
-playerName[2] = 10;
-playerName[0] = "mudrik";
-playerName.unshift("test");
-
-mixedData.push("hello");
-mixedData.push(12);
-mixedData.push(false);
-
-let test = [];
-let bands: string[] = [];
-
-bands.push("one");
-// bands.push(12); //Argument of type 'number' is not assignable to parameter of type 'string'.
-// bands.push(true); //Argument of type 'boolean' is not assignable to parameter of type 'string'.
-
-let myTuple: [string, number, boolean];
-myTuple = ["mo", 11, true];
-mixedData = ["test", 1, false];
-
-mixedData = myTuple;
-// myTuple = mixedData; // Target requires 3 element(s) but source may have fewer.
-
-myTuple[0] = "testing";
-// myTuple[0] = 1; //Type 'number' is not assignable to type 'string'.
-
-//Objects
-let myObj: object;
-myObj = [];
-
-console.log(typeof myObj);
-myObj = bands;
-myObj = {};
-
-const exampleObject = {
-  name: "John Doe",
-  age: 34,
-};
-
-exampleObject.name = "another name";
-
-interface Guitarist {
-  name: string;
-  active?: boolean;
-  albums: (string | number)[];
+        return ''+a+b;
 }
 
-let evh: Guitarist = {
-  name: "muhammed",
-  active: false,
-  albums: ["goal", 1],
-};
+const myVal:string=addOrConcat(1,2,'add') as string;
 
-const greetGuitarist = (guitarist: Guitarist) => {
-  if (guitarist.name) {
-    return `hello ${guitarist.name.toUpperCase()}!`;
-  }
-};
+const nextVal:number=addOrConcat(1,2,'concat')as number;
 
-console.log(greetGuitarist(evh));
+console.log("my value: "+myVal);
 
-enum Grade {
-  U = 1,
-  D,
-  C,
-  B,
-  A,
-}
+console.log("next value: "+ nextVal);
 
-console.log(Grade.U);
+//10 as string; //
+(10 as unknown)as string //first must to unknown
+
+const img=document.querySelector('img')!;
+const myImg=document.getElementById('#img')as HTMLImageElement;
+const myNextImg=<HTMLImageElement>document.getElementById('#img');
+
+img.src
+myImg.src
+myImg.src

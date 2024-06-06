@@ -1,75 +1,29 @@
-let stringArr = ['one', 'hey', 'Dave']
+class Coder {
+  secondLanguage!: string;
 
-let guitars = ['Strat', 'Les Paul', 5150]
+  constructor(
+    public readonly name: string,
+    public music: string,
+    private age: number,
+    protected language: string
+  ) {
+    this.name = name;
+    this.music = music;
+    this.age = age;
+    this.language = language;
+  }
 
-let mixedData = ['EVH', 1984, true]
-
-stringArr[0] = 'John'
-stringArr.push('hey')
-
-guitars[0] = 1984
-guitars.unshift('Jim')
-
-let test = []
-let bands: string[] = []
-bands.push('Van Halen')
-
-// Tuple 
-let myTuple: [string, number, boolean] = ['Dave', 42, true]
-
-let mixed = ['John', 1, false]
-
-myTuple[1] = 42
-
-// Objects
-let myObj: object
-myObj = []
-console.log(typeof myObj)
-myObj = bands
-myObj = {}
-
-const exampleObj = {
-    prop1: 'Dave',
-    prop2: true,
+  getAge = () => {
+    return this.age;
+  };
 }
 
-exampleObj.prop1 = 'John'
+const student1: Coder = new Coder("muhammed", "hello", 23, "kurdish");
 
-interface Guitarist {
-    name?: string,
-    active: boolean,
-    albums: (string | number)[]
-}
+console.log(student1.getAge());
+console.log(student1.music);
+console.log(student1.getAge());
 
-let evh: Guitarist = {
-    name: 'Eddie',
-    active: false,
-    albums: [1984, 5150, 'OU812']
-}
 
-let jp: Guitarist = {
-    active: true,
-    albums: ['I', 'II', 'IV']
-}
 
-const greetGuitarist = (guitarist: Guitarist) => {
-    if (guitarist.name) {
-        return `Hello ${guitarist.name.toUpperCase()}!`
-    }
-    return 'Hello!'
-}
-
-console.log(greetGuitarist(jp))
-
-// Enums 
-// "Unlike most TypeScript features, Enums are not a type-level addition to JavaScript but something added to the language and runtime."
-
-enum Grade {
-    U = 1,
-    D,
-    C,
-    B,
-    A,
-}
-
-console.log(Grade.U)
+console.log(student1);

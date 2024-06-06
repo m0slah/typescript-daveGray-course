@@ -1,7 +1,5 @@
 
-œtypescript:S6564"SRemove this redundant type alias and replace its occurrences with "stringOrNumber".(±®¬¢8åô”éı1J$a57a45be-45ee-4311-a26c-582e8281c223
-gtypescript:S125""Remove this commented out code.(ä×€“8åô”éı1J$c4d6094f-dd35-4e8c-ae32-16019a8cfba9
-gtypescript:S125%"Remove this commented out code.(œ±Àå8åô”éı1J$0a0f7a85-9289-477d-91b9-9d620fc74deb
-ltypescript:S125."Remove this commented out code.(²è†æüÿÿÿÿ8åô”éı1J$1423c6b3-33d5-42f9-98a8-2dc65a4e88e4
-‡typescript:S6644e">Unnecessary use of boolean literals in conditional expression.(‡ûÜ²8åô”éı1J$8cf73081-9a7c-40d2-898c-aab84e7551be
-‡typescript:S6644i">Unnecessary use of boolean literals in conditional expression.(ßùİ¡8•ò–éı1J$f37c0a0d-9834-4a34-aeb1-041428995fdb
+™typescript:S6564"KRemove this redundant type alias and replace its occurrences with "string".(ÀÛíòşÿÿÿÿ8”‰Óöş1J$bad1ec03-d70b-445c-bf13-b053bdaca6f1
+“typescript:S905""FExpected an assignment or function call and instead saw an expression.(ÔÁß§øÿÿÿÿ8˜‰Óöş1J$a5734c47-db0a-40d5-bb8c-0eb611115b72
+“typescript:S905#"FExpected an assignment or function call and instead saw an expression.(Ä £„ÿÿÿÿÿ8˜‰Óöş1J$1498b963-356d-42cb-857c-d3d350c5d876
+mtypescript:S905$"FExpected an assignment or function call and instead saw an expression.(Ä £„ÿÿÿÿÿ8ËÈÜöş1

@@ -70,9 +70,24 @@ class Circle {
         return this.pi; //is static method you can get pi with this.pi
     }
     getANumber() {
-        return Circle.py; //is non static method you must get py with Circle 
+        return Circle.py; //is non static method you must get py with Circle
     }
 }
 Circle.pi = 3.14;
 Circle.py = 3.14;
 ///////////////////////////////////////////////
+class Student {
+    constructor(studnetName) {
+        this.studnetName = studnetName;
+    }
+}
+// new Student(); //so you can not create a instance in abstract class
+// abstact class can only be extended by other classes.
+//Like this:
+class profile extends Student {
+    constructor(studnetName, picture) {
+        super(studnetName);
+        this.picture = picture;
+    }
+}
+///////////////////////////////////////////

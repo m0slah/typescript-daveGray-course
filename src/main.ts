@@ -111,8 +111,33 @@ class Circle {
   }
 
   getANumber() {
-    return Circle.py; //is non static method you must get py with Circle 
+    return Circle.py; //is non static method you must get py with Circle
   }
 }
 
 ///////////////////////////////////////////////
+
+abstract class Student {
+  private studnetName: string;
+
+  constructor(studnetName: string) {
+    this.studnetName = studnetName;
+  }
+}
+
+// new Student(); //so you can not create a instance in abstract class
+
+
+// abstact class can only be extended by other classes.
+//Like this:
+
+class profile extends Student {
+  picture: string;
+
+  constructor(studnetName: string, picture: string) {
+    super(studnetName);
+    this.picture = picture;
+  }
+}
+
+///////////////////////////////////////////

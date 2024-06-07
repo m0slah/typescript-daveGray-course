@@ -62,5 +62,17 @@ const david = new Peeps("david");
 console.log(muhammed);
 console.log(john);
 console.log(david);
+//can not access count in object of class becouse of its a static member of Peps
+// console.log("count of muhammed object: "+ muhammed.count);
 console.log("number is class instantiated :" + Peeps.count); //that is tell how many classes has been instantiated
-///////////////////////
+class Circle {
+    static getPi() {
+        return this.pi; //is static method you can get pi with this.pi
+    }
+    getANumber() {
+        return Circle.py; //is non static method you must get py with Circle 
+    }
+}
+Circle.pi = 3.14;
+Circle.py = 3.14;
+///////////////////////////////////////////////

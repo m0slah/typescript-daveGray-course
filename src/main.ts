@@ -68,9 +68,35 @@ class Player implements Player {
 
 const player: Player = new Player("palmer", 20);
 
-
-
 console.log(player);
 
-
 console.log(player.transfer("man city", "chelsea"));
+
+//////////////////////////////////
+
+class Peeps {
+  static count: number = 0;
+
+  static getCount = (): number => {
+    return Peeps.count;
+  };
+
+  public id: number;
+
+  constructor(public name: string) {
+    this.name = name;
+    this.id = ++Peeps.count;
+  }
+}
+
+const muhammed = new Peeps("Muhammed");
+const john = new Peeps("john");
+const david = new Peeps("david");
+
+console.log(muhammed);
+console.log(john);
+console.log(david);
+
+console.log("number is class instantiated :" + Peeps.count); //that is tell how many classes has been instantiated
+
+///////////////////////

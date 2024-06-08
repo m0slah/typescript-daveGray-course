@@ -91,3 +91,23 @@ class profile extends Student {
     }
 }
 ///////////////////////////////////////////
+class Bands {
+    constructor(dataState) {
+        this.dataState = dataState;
+    }
+    get data() {
+        return this.dataState;
+    }
+    set data(value) {
+        if (Array.isArray(value) &&
+            value.every((element) => typeof element === "string")) {
+            this.dataState = value;
+            return;
+        }
+        else {
+            throw new Error("param is in array is not a string");
+        }
+    }
+}
+const myBands = new Bands(["hello", "world"]);
+console.log(myBands);

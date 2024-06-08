@@ -127,7 +127,6 @@ abstract class Student {
 
 // new Student(); //so you can not create a instance in abstract class
 
-
 // abstact class can only be extended by other classes.
 //Like this:
 
@@ -141,3 +140,30 @@ class profile extends Student {
 }
 
 ///////////////////////////////////////////
+
+class Bands {
+  private dataState: string[];
+
+  constructor(dataState: string[]) {
+    this.dataState = dataState;
+  }
+
+  public get data() {
+    return this.dataState;
+  }
+
+  public set data(value: string[]) {
+    if (
+      Array.isArray(value) &&
+      value.every((element) => typeof element === "string")
+    ) {
+      this.dataState = value;
+      return;
+    } else {
+      throw new Error("param is in array is not a string");
+    }
+  }
+}
+
+const myBands: Bands = new Bands(["hello","world"]);
+console.log(myBands);

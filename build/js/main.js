@@ -22,4 +22,17 @@ const todaysNet = (transactions) => {
 console.log(todaysNet(todayTransactions));
 todayTransactions.pizza = 40;
 console.log(todayTransactions.pizza);
-console.log(todayTransactions['dave']);
+const student = {
+    name: "john",
+    GPA: 3.5,
+    classes: [100, 200]
+};
+// console.log(student)
+console.log("before");
+for (const key in student) {
+    console.log(key);
+}
+Object.keys(student).map(key => {
+    console.log(student[key]);
+});
+///////////////////////////////////////

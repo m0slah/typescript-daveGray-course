@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41fc0dd6-2620-4c98-ba4e-a8f308d0f025" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af82ed81d915ec5dccd8d76631cf98634afeb3e1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/f/af82ed81d915ec5dccd8d76631cf98634afeb3e1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
     </list>
@@ -77,7 +74,12 @@
       <workItem from="1717481582929" duration="24000" />
       <workItem from="1717697584550" duration="1385000" />
       <workItem from="1717795076115" duration="62000" />
-      <workItem from="1717913520516" duration="2503000" />
+      <workItem from="1717913520516" duration="3102000" />
+      <workItem from="1717939523615" duration="1625000" />
+      <workItem from="1718009358743" duration="3515000" />
+      <workItem from="1718046238224" duration="4859000" />
+      <workItem from="1718085999180" duration="9000" />
+      <workItem from="1719058342178" duration="1459000" />
     </task>
     <servers />
   </component>

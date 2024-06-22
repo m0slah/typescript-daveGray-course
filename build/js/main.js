@@ -35,4 +35,16 @@ for (const key in student) {
 Object.keys(student).map(key => {
     console.log(student[key]);
 });
-///////////////////////////////////////
+const student1 = {
+    class: "hello",
+    name: "test",
+    age: 11
+};
+console.log(student1);
+const nameOfPlayer = {
+    "name": "muhammed"
+};
+console.log(nameOfPlayer['muhammed']);
+const person = {
+    name: "hello",
+};

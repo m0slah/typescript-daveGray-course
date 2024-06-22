@@ -60,15 +60,45 @@ const student: Student = {
 
 console.log("before")
 
-for (const key in student){
+for (const key in student) {
     console.log(key as keyof Student);
 }
 
-Object.keys(student).map(key =>{
+Object.keys(student).map(key => {
     console.log(student[key as keyof typeof student])
 })
 
 ///////////////////////////////////////
 
+interface IStudent {
+    name: string;
+    age: number;
+}
 
+interface IStudentClass extends IStudent {
+    class: string
+}
 
+const student1: IStudentClass = {
+    class: "hello",
+    name: "test",
+    age: 11
+}
+
+console.log(student1);
+
+interface IStringByNumber {
+    [key: string]: string
+}
+
+const nameOfPlayer: IStringByNumber = {
+    "name":"muhammed"
+}
+
+console.log(nameOfPlayer['muhammed']);
+
+const person={
+    name:"hello",
+}
+
+//////////////////////////

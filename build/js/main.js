@@ -48,3 +48,11 @@ console.log(nameOfPlayer['muhammed']);
 const person = {
     name: "hello",
 };
+const mounthlySalary = {
+    salary: 500,
+    bounes: 100,
+    sidehustle: 150,
+};
+for (const revenue in mounthlySalary) {
+    console.log(`${revenue}: ${mounthlySalary[revenue]}`);
+}

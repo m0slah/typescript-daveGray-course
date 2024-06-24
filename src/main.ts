@@ -92,13 +92,30 @@ interface IStringByNumber {
 }
 
 const nameOfPlayer: IStringByNumber = {
-    "name":"muhammed"
+    "name": "muhammed"
 }
 
 console.log(nameOfPlayer['muhammed']);
 
-const person={
-    name:"hello",
+const person = {
+    name: "hello",
 }
 
 //////////////////////////
+// interface Incomes {
+//     [key: string]: number
+// }
+
+type Streams = 'salary' | 'bounes' | 'sidehustle';
+
+type Incomes = Record<Streams, number | string>;
+
+const mounthlySalary: Incomes = {
+    salary: 500,
+    bounes: 100,
+    sidehustle: 150,
+}
+
+for (const revenue in mounthlySalary){
+    console.log(`${revenue}: ${mounthlySalary[revenue as keyof Incomes]}`)
+}
